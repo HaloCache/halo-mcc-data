@@ -1,0 +1,38 @@
+/** Halo: Reach map definitions. */
+export const REACH_MAPS = {
+    Multiplayer: [
+        { id: 'anchor_9', name: 'Anchor 9', ids: { fileshare: [198] } },
+        { id: 'ridgeline', name: 'Ridgeline', ids: { fileshare: [205] } },
+        { id: 'boardwalk', name: 'Boardwalk', ids: { fileshare: [190] } },
+        { id: 'boneyard', name: 'Boneyard', ids: { fileshare: [191] } },
+        { id: 'penance', name: 'Penance', ids: { fileshare: [204] } },
+        { id: 'breakneck', name: 'Breakneck', ids: { fileshare: [208] } },
+        { id: 'condemned', name: 'Condemned', ids: { fileshare: [201] } },
+        { id: 'countdown', name: 'Countdown', ids: { fileshare: [192] } },
+        { id: 'courtyard', name: 'Courtyard', ids: { fileshare: [212] } },
+        { id: 'high_noon', name: 'High Noon', ids: { fileshare: [207] } },
+        { id: 'highlands', name: 'Highlands', ids: { fileshare: [202] } },
+        { id: 'powerhouse', name: 'Powerhouse', ids: { fileshare: [193] } },
+        { id: 'reflection', name: 'Reflection', ids: { fileshare: [194] } },
+        { id: 'forge_world', name: 'Forge World', ids: { fileshare: [209] } },
+        { id: 'solitary', name: 'Solitary', ids: { fileshare: [206] } },
+        { id: 'spire', name: 'Spire', ids: { fileshare: [195] } },
+        { id: 'sword_base', name: 'Sword Base', ids: { fileshare: [196] } },
+        { id: 'tempest', name: 'Tempest', ids: { fileshare: [200] } },
+        { id: 'overlook', name: 'Overlook', ids: { fileshare: [216] } },
+        { id: 'campaign_cr1', name: 'Campaign: R1', builtInId: '_map_id_haloreach_noble_actual', ids: { fileshare: [178] } },
+        { id: 'campaign_cr4', name: 'Campaign: R4', builtInId: '_map_id_haloreach_nightfall', ids: { fileshare: [181] } },
+        { id: 'zealot', name: 'Zealot', ids: { fileshare: [197] } },
+        { id: 'campaign_cr11', name: 'Campaign: R11', builtInId: '_map_id_haloreach_lone_wolf', ids: { fileshare: [189] } },
+        { id: 'breakpoint', name: 'Breakpoint', ids: { fileshare: [199] } },
+        { id: 'battle_canyon', name: 'Battle Canyon', ids: { fileshare: [203] } },
+        { id: 'beachhead', name: 'Beachhead', ids: { fileshare: [210] } },
+        { id: 'corvette', name: 'Corvette', ids: { fileshare: [211] } },
+        { id: 'glacier', name: 'Glacier', ids: { fileshare: [213] } },
+        { id: 'holdout', name: 'Holdout', ids: { fileshare: [214] } },
+        { id: 'outpost', name: 'Outpost', ids: { fileshare: [215] } },
+        { id: 'waterfront', name: 'Waterfront', ids: { fileshare: [217] } },
+        { id: 'unearthed', name: 'Unearthed', ids: { fileshare: [218] } },
+        { id: 'installation_04', name: 'Installation 04', ids: { fileshare: [219] } }
+    ]
+};

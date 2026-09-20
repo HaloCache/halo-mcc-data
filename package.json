@@ -1,0 +1,54 @@
+{
+    "name": "@halocache/halo-mcc-data",
+    "version": "1.0.0",
+    "description": "Centralized data, enums, endpoints, and rate-limit constants for the Halo: The Master Chief Collection API ecosystem.",
+    "main": "src/index.js",
+    "types": "src/index.d.ts",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./src/index.d.ts",
+            "default": "./src/index.js"
+        }
+    },
+    "files": [
+        "src/",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "test": "node --test \"tests/**/*.test.js\" && npm run test:types",
+        "test:types": "tsc --noEmit --strict --lib ES2022 src/index.d.ts && node scripts/verify-declaration-exports.js"
+    },
+    "devDependencies": {
+        "typescript": "7.0.2"
+    },
+    "keywords": [
+        "halo",
+        "mcc",
+        "master-chief-collection",
+        "xbox",
+        "playfab",
+        "game-data",
+        "endpoints",
+        "rate-limits"
+    ],
+    "author": {
+        "name": "Pix3lPirat3",
+        "url": "https://github.com/Pix3lPirat3"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HaloCache/halo-mcc-data.git",
+        "directory": "packages/halo-mcc-data"
+    },
+    "homepage": "https://github.com/HaloCache/halo-mcc-data/tree/main/packages/halo-mcc-data#readme",
+    "bugs": {
+        "url": "https://github.com/HaloCache/halo-mcc-data/issues"
+    },
+    "sideEffects": false,
+    "engines": {
+        "node": ">=22.19.0"
+    }
+}
