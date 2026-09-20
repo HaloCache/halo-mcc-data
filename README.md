@@ -1,17 +1,6 @@
 # @halocache/halo-mcc-data
 
-A centralized data package for the **Halo: The Master Chief Collection (MCC)** API ecosystem.
-
-This package provides a single source of truth for:
-*   **Enums**: Verified Game Engines, Categories, Maps, and Server Regions.
-*   **Constants**: API Endpoints (PlayFab, Xbox Live, Azure FD), Rate Limit configurations, and Title IDs.
-*   **Mappings**: Helper functions to translate raw API IDs into friendly names.
-
-## Installation
-
-```bash
-npm install @halocache/halo-mcc-data
-```
+Centralized data, enums, endpoints, and rate-limit constants
 
 ## Usage
 
@@ -64,14 +53,6 @@ const reachCategories = getGameCategoriesByEngine('HaloReach');
 
 Do not substitute the per-title IDs in `Data/BuiltInData/*.json`. Those IDs
 describe each binary rules format and are not FileShare/CGB wire IDs.
-
-## Data Verification
-
-All data within this package has been verified against:
-1.  **Built-In Game Data**: Extracted from MCC PC JSON files (`Halo3.json`, etc.).
-2.  **API Inspection**: Verified against live responses from PlayFab and Xbox Live.
-
-*Last Verified: 2026-09-14*
 
 ## License
 
