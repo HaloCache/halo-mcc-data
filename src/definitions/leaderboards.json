@@ -1,0 +1,381 @@
+{
+  "metadata": {
+    "generatedAt": "2026-10-29T11:32:27.604Z",
+    "scid": "77290100-225e-4768-9373-98164430a9f8",
+    "contractVersion": 3,
+    "totalFunctionalCampaignBoards": 1008,
+    "playlistBoards": 28,
+    "playlistIdSourceStatus": "complete-for-active-playlists",
+    "playlistIds": 14,
+    "grandTotalEnumerableBoards": 1036
+  },
+  "difficultyNames": {
+    "0": "Easy",
+    "1": "Normal",
+    "2": "Heroic",
+    "3": "Legendary"
+  },
+  "metricNames": {
+    "Score64": "score",
+    "TimeMS": "time"
+  },
+  "games": {
+    "HaloCE": {
+      "missionMapIds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "difficulties": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "coops": [
+        0,
+        1
+      ],
+      "metrics": [
+        "Score64",
+        "TimeMS"
+      ],
+      "boardCount": 160
+    },
+    "Halo2": {
+      "missionMapIds": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "difficulties": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "coops": [
+        0,
+        1
+      ],
+      "metrics": [
+        "Score64",
+        "TimeMS"
+      ],
+      "boardCount": 240
+    },
+    "Halo3": {
+      "missionMapIds": [
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78
+      ],
+      "difficulties": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "coops": [
+        0,
+        1
+      ],
+      "metrics": [
+        "Score64",
+        "TimeMS"
+      ],
+      "boardCount": 160
+    },
+    "Halo4": {
+      "missionMapIds": [
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112
+      ],
+      "difficulties": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "coops": [
+        0,
+        1
+      ],
+      "metrics": [
+        "Score64",
+        "TimeMS"
+      ],
+      "boardCount": 160
+    },
+    "Halo3ODST": {
+      "missionMapIds": [
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175
+      ],
+      "difficulties": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "coops": [
+        0,
+        1
+      ],
+      "metrics": [
+        "Score64",
+        "TimeMS"
+      ],
+      "boardCount": 128
+    },
+    "HaloReach": {
+      "missionMapIds": [
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        189
+      ],
+      "difficulties": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "coops": [
+        0,
+        1
+      ],
+      "metrics": [
+        "Score64",
+        "TimeMS"
+      ],
+      "boardCount": 160
+    }
+  },
+  "playlists": {
+    "idSourceStatus": "complete-for-active-playlists",
+    "droppedCapturedIds": [
+      32958872
+    ],
+    "metrics": [
+      "Score64",
+      "TimeMS"
+    ],
+    "boards": [
+      {
+        "playlistId": 76003982,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 198795550,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 1468,
+          "TimeMS": 1470
+        }
+      },
+      {
+        "playlistId": 555867636,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 635486275,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 681830042,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 722299992,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 831201770,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 1000837190,
+        "label": "Off Your Feet",
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 1063685617,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 1613427852,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 1693182267,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 3295887241,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 3639722466,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      },
+      {
+        "playlistId": 3694189653,
+        "label": null,
+        "metrics": [
+          "Score64",
+          "TimeMS"
+        ],
+        "totals": {
+          "Score64": 10000,
+          "TimeMS": 10000
+        }
+      }
+    ]
+  }
+}

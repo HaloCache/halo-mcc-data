@@ -18,6 +18,26 @@ export const BUILD_ID = "2025.08.16.178512.1-Release";
 export const PLAYFAB_TITLE_ID = "EE38";
 
 /**
+ * MCC's Xbox Live Service Configuration Id (SCID), required in the leaderboards
+ * and userstats URL paths. Validated live against leaderboards.xboxlive.com.
+ * @constant {string}
+ */
+export const MCC_SCID = "77290100-225e-4768-9373-98164430a9f8";
+
+/**
+ * Xbox Live real-time activity socket. Not in ENDPOINTS, which is asserted to
+ * carry absolute https urls.
+ * @constant {string}
+ */
+export const XBOX_LIVE_RTA_SOCKET = 'wss://rta.xboxlive.com/connect';
+
+/**
+ * MCC Xbox Live title id (decimal).
+ * @constant {number}
+ */
+export const MCC_XBL_TITLE_ID = 1144039928;
+
+/**
  * API Endpoints
  * @constant {Object}
  */
@@ -31,7 +51,10 @@ export const ENDPOINTS = {
         GET_STORE_ITEMS: 'https://ee38.playfabapi.com/Client/GetStoreItems',
         GET_PLAYFAB_IDS: 'https://ee38.playfabapi.com/Client/GetPlayFabIDsFromXboxLiveIDs',
         GET_TITLE_PLAYERS: 'https://ee38.playfabapi.com/Profile/GetTitlePlayersFromMasterPlayerAccountIds',
-        GET_PROFILES: 'https://ee38.playfabapi.com/Profile/GetProfiles'
+        GET_PROFILES: 'https://ee38.playfabapi.com/Profile/GetProfiles',
+        GET_OBJECTS: 'https://ee38.playfabapi.com/Object/GetObjects',
+        EXECUTE_CLOUD_SCRIPT: 'https://ee38.playfabapi.com/Client/ExecuteCloudScript',
+        REPORT_UGC_ITEM: 'https://ee38.playfabapi.com/UserGeneratedContent/ReportUgcItem'
     },
 
     MCC: {
@@ -39,7 +62,24 @@ export const ENDPOINTS = {
         GET_UGC_ITEMS: 'https://mcc-production.azurefd.net/api/GetPlayFabUgcItems',
         GET_UGC_ITEM: 'https://mcc-production.azurefd.net/api/GetPlayFabUgcItem',
         PURCHASE_SEASONAL: 'https://mcc-production.azurefd.net/api/ProgressionPurchaseAndUnlockContainer',
-        CUSTOMIZATION_WRITE: 'https://mcc-production.azurefd.net/api/CustomizationWritePlayFabEntityObject'
+        CUSTOMIZATION_WRITE: 'https://mcc-production.azurefd.net/api/CustomizationWritePlayFabEntityObject',
+        PROGRESSION_CACHE_XP: 'https://mcc-production.azurefd.net/api/ProgressionCachePlayerXPToPlayFab',
+        PROGRESSION_WRITE_ENTITY_OBJECTS: 'https://mcc-production.azurefd.net/api/ProgressionWritePlayFabEntityObjects',
+        VALIDATE_STRING: 'https://mcc-production.azurefd.net/api/ValidateString',
+        VALIDATE_CHAT_STRING: 'https://mcc-production.azurefd.net/api/ValidateChatString',
+        PROFANITY_FILTER_STRING_LIST: 'https://mcc-production.azurefd.net/api/ProfanityFilterStringList',
+        CHAT_STRING_PUBLIC_KEY: 'https://mcc-production.azurefd.net/api/ChatStringPublicKey',
+        REPORT_PLAYER: 'https://mcc-production.azurefd.net/api/ReportPlayer',
+        USER_REPORT_ABOUT_MALICIOUS_CONTENT: 'https://mcc-production.azurefd.net/api/UserReportAboutMaliciousContent'
+    },
+
+    XBOX_LIVE_SERVICES: {
+        LEADERBOARDS: 'https://leaderboards.xboxlive.com',
+        SOCIAL: 'https://social.xboxlive.com',
+        PRESENCE: 'https://userpresence.xboxlive.com',
+        USER_STATS: 'https://userstats.xboxlive.com',
+        NOTIFY: 'https://notify.xboxlive.com',
+        SESSION_DIRECTORY: 'https://sessiondirectory.xboxlive.com'
     },
 
     WAYPOINT: {

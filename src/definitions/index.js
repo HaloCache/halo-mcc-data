@@ -3,4 +3,7 @@ export * from './categories.js';
 export * from './variants.js';
 export * from './dictionaries.js';
 export * from './misc.js';
+export * from './nameplates.js';
+export * from './customization.js';
+export * from './leaderboards.js';
 export * from './assets.js';

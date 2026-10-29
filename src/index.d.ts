@@ -64,6 +64,13 @@ export const ENDPOINTS: {
 
 export const BUILD_ID: string;
 export const PLAYFAB_TITLE_ID: string;
+
+/** MCC's Service Configuration Id, required in leaderboard and user-stats paths. */
+export const MCC_SCID: string;
+/** Xbox Live real-time activity socket. */
+export const XBOX_LIVE_RTA_SOCKET: string;
+/** MCC's Xbox Live title id, in decimal. */
+export const MCC_XBL_TITLE_ID: number;
 export const RELYING_PARTIES: Readonly<Record<'XBOX_LIVE' | 'PLAYFAB' | 'HALO_WAYPOINT', string>>;
 export const DEFAULT_HEADERS: Readonly<Record<string, string>>;
 export const MCC_DATACENTERS: readonly string[];
@@ -115,6 +122,246 @@ export function getServerRegionName(region: number): string;
 
 export const CATEGORY_IMAGE_FILENAMES: Readonly<Record<string, string>>;
 export function getGameTypeImageFilename(categoryName: string): string | null;
+/** A nameplate as playercustomization.xml spells it. */
+export interface NameplateDefinition {
+    id: string;
+    image: string;
+    name: string;
+    unlock_key?: string;
+    lockdesc?: string;
+    allow_team_color?: string;
+    is_platinum?: string;
+}
+
+/**
+ * An unlockdb rule. `id` is the `unlock_key` a definition points at; which extra
+ * attribute carries the target depends on `type`, and a PlayfabInventory rule
+ * carries none.
+ */
+export interface NameplateUnlockDefinition {
+    id: string;
+    type: string;
+    category: string;
+    state: string;
+    achievementID?: string;
+    entitlement?: string;
+}
+
+/** One evidence list, and whether it is known to be complete. */
+export interface UnlockProviderEvidence {
+    ids: Array<string | number>;
+    complete?: boolean;
+}
+
+/** What is known about a player, for resolving an unlock rule. */
+export interface UnlockEvidence {
+    achievements?: UnlockProviderEvidence;
+    entitlements?: UnlockProviderEvidence;
+    inventory?: UnlockProviderEvidence;
+    inventoryItemIdByUnlockKey?: Record<string, string>;
+}
+
+/** `unlocked` is null when the evidence cannot answer the rule. */
+export interface UnlockState {
+    id: string | null;
+    unlockKey: string | null;
+    type: string | null;
+    unlocked: boolean | null;
+    reason: string;
+}
+
+export const NameplateDefinitions: ReadonlyArray<Readonly<NameplateDefinition>>;
+export const NameplateUnlockDefinitions: ReadonlyArray<Readonly<NameplateUnlockDefinition>>;
+export const NameplateDefinitionSources: ReadonlyArray<Readonly<{ path: string; sha256: string }>>;
+export function getNameplateDefinition(id: number | string): Readonly<NameplateDefinition> | null;
+export function getNameplateUnlockDefinition(unlockKey: string): Readonly<NameplateUnlockDefinition> | null;
+export function getNameplateImagePath(id: number | string): string | null;
+export function getNameplateUnlockState(
+    id: number | string,
+    evidence?: UnlockEvidence
+): Readonly<UnlockState>;
+
+/** 8-bit colour channels, converted from the install's 0..1 floats. */
+export interface Rgb {
+    r: number;
+    g: number;
+    b: number;
+}
+
+/**
+ * An emblem: two tinted layers, image1 the foreground symbol and image2 the
+ * background. Packed art, so these are texture names rather than paths.
+ */
+export interface EmblemDefinition {
+    id: string;
+    name: string;
+    image1: string;
+    image2: string;
+    image1_small: string;
+    image2_small: string;
+}
+
+/** A palette colour, channels as 0..1 float strings. */
+export interface ColorDefinition {
+    id: string;
+    r: string;
+    g: string;
+    b: string;
+    name: string;
+    customizationitem?: string;
+}
+
+/** A Player ID avatar. `image`/`image_large` are avatar-pack texture names. */
+export interface AvatarDefinition {
+    id: string;
+    name: string;
+    image: string;
+    image_large?: string;
+    unlock_key?: string;
+    lockdesc?: string;
+}
+
+/**
+ * A full armour set. `use_elite_model` is the model variant: Elite vs Spartan in
+ * Halo 2A and 3, Female vs Male in Halo 4.
+ */
+export interface ArmorSetDefinition {
+    id: string;
+    name: string;
+    image: string;
+    use_elite_model: string;
+    customizationitem?: string;
+}
+
+/** One armour piece. `type` is its slot; the id is unique only within it. */
+export interface ArmorPieceDefinition {
+    id: string;
+    type: string;
+    customizationitem: string;
+}
+
+/**
+ * A firefight voice. Reach voice 0 misspells the key attribute as
+ * `ustomizationitem`; getFirefightVoiceCustomizationItem reads either.
+ */
+export interface FirefightVoiceDefinition {
+    id: string;
+    customizationitem?: string;
+    ustomizationitem?: string;
+}
+
+/** One appearance game's sections. */
+export interface AppearanceBlock {
+    Armor?: ReadonlyArray<Readonly<ArmorSetDefinition>>;
+    Item?: ReadonlyArray<Readonly<ArmorPieceDefinition>>;
+    Voice?: ReadonlyArray<Readonly<FirefightVoiceDefinition>>;
+    Color?: ReadonlyArray<Readonly<ColorDefinition>>;
+}
+
+export const CUSTOMIZATION_TEXTURE_PACKS: Readonly<Record<string, string>>;
+export const ArmorSlot: Readonly<Record<string, number>>;
+export const AppearanceGameEngine: Readonly<Record<number, GameEngine>>;
+export const REACH_APPEARANCE_GAME_ID: number;
+export const EmblemDefinitions: ReadonlyArray<Readonly<EmblemDefinition>>;
+export const ColorDefinitions: ReadonlyArray<Readonly<ColorDefinition>>;
+export const AvatarDefinitions: ReadonlyArray<Readonly<AvatarDefinition>>;
+export const AvatarUnlockDefinitions: ReadonlyArray<Readonly<NameplateUnlockDefinition>>;
+export const TeamColorDefinitions: Readonly<Record<string, ReadonlyArray<Readonly<ColorDefinition>>>>;
+export const AppearanceDefinitions: Readonly<Record<string, Readonly<AppearanceBlock>>>;
+export const CustomizationDefinitionSources: ReadonlyArray<Readonly<{ path: string; sha256: string }>>;
+
+export function getEmblemDefinition(id: number | string): Readonly<EmblemDefinition> | null;
+export function getColorDefinition(id: number | string): Readonly<ColorDefinition> | null;
+export function getColorRgb(id: number | string): Rgb | null;
+export function getAvatarDefinition(id: number | string): Readonly<AvatarDefinition> | null;
+export function getAvatarUnlockDefinition(unlockKey: string): Readonly<NameplateUnlockDefinition> | null;
+export function getAvatarUnlockState(
+    id: number | string,
+    evidence?: UnlockEvidence
+): Readonly<UnlockState>;
+export function getTeamColorDefinition(
+    gameId: number | string,
+    colorId: number | string
+): Readonly<ColorDefinition> | null;
+export function getTeamColorRgb(gameId: number | string, colorId: number | string): Rgb | null;
+export function getArmorSetDefinition(
+    gameId: number | string,
+    id: number | string,
+    options?: { eliteModel?: boolean }
+): Readonly<ArmorSetDefinition> | null;
+export function getArmorPieceDefinitions(
+    gameId: number | string,
+    slot: number | string
+): ReadonlyArray<Readonly<ArmorPieceDefinition>>;
+export function getArmorPieceDefinition(
+    gameId: number | string,
+    slot: number | string,
+    id: number | string
+): Readonly<ArmorPieceDefinition> | null;
+export function getArmorColorDefinition(
+    gameId: number | string,
+    id: number | string
+): Readonly<ColorDefinition> | null;
+export function getArmorColorRgb(gameId: number | string, id: number | string): Rgb | null;
+export function getFirefightVoiceDefinition(
+    gameId: number | string,
+    id: number | string
+): Readonly<FirefightVoiceDefinition> | null;
+export function getFirefightVoiceCustomizationItem(
+    gameId: number | string,
+    id: number | string
+): string | null;
+export function getArmorSlotName(slot: number | string): string | null;
+export function getArmorSlotType(name: string): number | null;
+export function getArmorUnlockKey(customizationItem: string): string | null;
+
+/** The parameters that compose one board name. */
+export interface LeaderboardBoard {
+    kind: 'mission' | 'playlist';
+    metric: 'scoring' | 'timing' | 'Score64' | 'TimeMS';
+    difficultyId?: number;
+    mapId?: number;
+    coop?: number;
+    playlistId?: number;
+}
+
+/** One board-name template and the parameters it takes. */
+export interface LeaderboardCategory {
+    kind: 'mission' | 'playlist';
+    metric: 'scoring' | 'timing';
+    template: string;
+    params: ReadonlyArray<string>;
+    wireNameStatus: string;
+}
+
+/** An enumerated board, carrying the composed `name`. */
+export interface LeaderboardBoardSpec {
+    game: string | null;
+    kind: 'mission' | 'playlist';
+    metric: 'scoring' | 'timing';
+    name: string;
+    difficultyId?: number;
+    mapId?: number;
+    coop?: number;
+    playlistId?: number;
+    label?: string;
+    crossgame?: boolean;
+}
+
+export const LEADERBOARD_METRICS: Readonly<Record<string, string>>;
+export const LEADERBOARD_CONTRACT: Readonly<Record<string, string>>;
+export const LEADERBOARD_CATEGORIES: ReadonlyArray<Readonly<LeaderboardCategory>>;
+export const LEADERBOARD_BOARD_NAME_TEMPLATES: ReadonlyArray<string>;
+export const LEADERBOARD_BOARD_COUNT: number;
+export const LEADERBOARD_PLAYLIST_BOARD_COUNT: number;
+export const LeaderboardCatalog: Readonly<Record<string, unknown>>;
+export const LeaderboardGames: ReadonlyArray<string>;
+export const LeaderboardPlaylists: ReadonlyArray<Readonly<Record<string, unknown>>>;
+export function buildLeaderboardName(board: LeaderboardBoard): string;
+export function enumerateLeaderboards(options?: {
+    game?: string;
+    kind?: 'mission' | 'playlist';
+}): LeaderboardBoardSpec[];
 
 export const VariantNameLookup: Readonly<Record<string, string>>;
 export function cleanName(value: unknown): string;
