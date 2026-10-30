@@ -1,15 +1,13 @@
 /**
  * Leaderboard Definitions
  *
- * Board names are composed, not stored, and the game is encoded in the MapId
- * range rather than a prefix. The base formats come from
- * MCC-Win64-Shipping.exe `.rdata`:
+ * Board names are composed rather than stored, and the game is encoded in the
+ * MapId range rather than a prefix:
  *
- *   LBBestMission%sDifficultyId%dMapId%dCoop%d   (%s = Score64 | TimeMS)
- *   LBBestPlaylist%sPlaylistId%u
+ *   LBBestMission{Score64|TimeMS}DifficultyId{d}MapId{m}Coop{c}
+ *   LBBestPlaylist{Score64|TimeMS}PlaylistId{u}
  *
- * leaderboards.json is a live sweep of those names recording which boards
- * answer; regenerate with tools/mcc-online-research/gen-catalog.mjs.
+ * leaderboards.json records which of those names the service answers for.
  *
  * @module definitions/leaderboards
  */
